@@ -131,9 +131,12 @@ public class DmTableMetaCache extends OracleTableMetaCache {
         while (rs.next()) {
             String colName = rs.getString("PK_NAME");
             for (IndexMeta i : tableMeta.getAllIndexes().values()) {
-                i.getValues().stream()
-                        .filter(c -> colName.equals(c.getColumnName()))
-                        .forEach(c -> i.setIndextype(IndexType.PRIMARY));
+                if(colName.equals(i.getIndexName())){
+                    i.setIndextype(IndexType.PRIMARY);
+                }
+                // i.getValues().stream()
+                //         .filter(c -> colName.equals(c.getColumnName()))
+                //         .forEach(c -> i.setIndextype(IndexType.PRIMARY));
             }
         }
     }

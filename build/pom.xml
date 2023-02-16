@@ -63,7 +63,7 @@
 
     <properties>
         <!-- seata version -->
-        <revision>1.6.1</revision>
+        <revision>1.6.1-dm-SNAPSHOT</revision>
 
         <!-- Compiler settings properties -->
         <java.version>1.8</java.version>
@@ -401,4 +401,12 @@
             </properties>
         </profile>
     </profiles>
+
+    <distributionManagement>
+        <repository>
+            <id>snapshots</id>
+            <name>zongtuo-snapshots</name>
+            <url>https://ds.dongriyangguang.top:7898/repository/maven-snapshots/</url>
+        </repository>
+    </distributionManagement>
 </project>

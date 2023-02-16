@@ -26,7 +26,7 @@ import io.seata.sqlparser.util.JdbcConstants;
  *
  * @author: Zhibei Hao
  */
-@LoadLevel(name = JdbcConstants.ORACLE)
+@LoadLevel(name = JdbcConstants.DM)
 public class DmUndoExecutorHolder implements UndoExecutorHolder {
 
     @Override

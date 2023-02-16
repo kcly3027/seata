@@ -337,4 +337,12 @@
             </plugin>
         </plugins>
     </build>
+
+    <distributionManagement>
+        <repository>
+            <id>snapshots</id>
+            <name>zongtuo-snapshots</name>
+            <url>https://ds.dongriyangguang.top:7898/repository/maven-snapshots/</url>
+        </repository>
+    </distributionManagement>
 </project>
