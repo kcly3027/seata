@@ -95,6 +95,7 @@
         <postgresql.version>42.1.4</postgresql.version>
         <h2.version>1.4.181</h2.version>
         <mariadb.version>2.7.2</mariadb.version>
+        <dm.version>8.1.2.192</dm.version>
         <!-- db connection pool -->
         <druid.version>1.2.6</druid.version>
         <commons-dbcp2.version>2.7.0</commons-dbcp2.version>
@@ -680,6 +681,13 @@
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-servlet</artifactId>
                 <version>${jetty-version}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>com.dameng</groupId>
+                <artifactId>DmJdbcDriver18</artifactId>
+                <version>${dm.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

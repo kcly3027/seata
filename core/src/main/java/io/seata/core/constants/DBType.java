@@ -77,7 +77,12 @@ public enum DBType {
     /**
      * Maria db type.
      */
-    MARIADB;
+    MARIADB,
+
+    /**
+     * DaMeng db type.
+     */
+    DM;
 
     /**
      * Valueof db type.

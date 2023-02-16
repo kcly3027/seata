@@ -594,6 +594,12 @@
             <artifactId>lz4-java</artifactId>
             <scope>provided</scope>
         </dependency>
+
+        <dependency>
+            <groupId>com.dameng</groupId>
+            <artifactId>DmJdbcDriver18</artifactId>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <build>

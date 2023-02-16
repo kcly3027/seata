@@ -76,6 +76,12 @@ public class PageUtil {
             + SOURCE_SQL_PLACE_HOLD + ") temp ) where rn between " + START_PLACE_HOLD + " and " + END_PLACE_HOLD;
 
     /**
+     * The constant DM_PAGE_TEMPLATE.
+     */
+    private static final String DM_PAGE_TEMPLATE = "select * from ( select ROWNUM rn, temp.* from ("
+            + SOURCE_SQL_PLACE_HOLD + ") temp ) where rn between " + START_PLACE_HOLD + " and " + END_PLACE_HOLD;
+
+    /**
      * check page parm
      *
      * @param pageNum the page num
@@ -112,6 +118,10 @@ public class PageUtil {
                 return ORACLE_PAGE_TEMPLATE.replace(SOURCE_SQL_PLACE_HOLD, sourceSql)
                         .replace(START_PLACE_HOLD, String.valueOf(pageSize * (pageNum - 1) + 1))
                         .replace(END_PLACE_HOLD, String.valueOf(pageSize * pageNum));
+            case "dm":
+                return DM_PAGE_TEMPLATE.replace(SOURCE_SQL_PLACE_HOLD, sourceSql)
+                        .replace(START_PLACE_HOLD, String.valueOf(pageSize * (pageNum - 1) + 1))
+                        .replace(END_PLACE_HOLD, String.valueOf(pageSize * pageNum));
             default:
                 throw new NotSupportYetException("PageUtil not support this dbType:" + dbType);
         }
@@ -130,6 +140,7 @@ public class PageUtil {
             case "h2":
             case "oceanbase":
             case "oracle":
+            case "dm":
                 return sourceSql.replaceAll("(?i)(?<=select)(.*)(?=from)", " count(1) ");
             case "postgresql":
                 int lastIndexOfOrderBy = sourceSql.toLowerCase().lastIndexOf("order by");
